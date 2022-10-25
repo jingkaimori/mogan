@@ -57,6 +57,10 @@ target("mogan")
     add_packages("libcurl")
     add_packages("freetype")
 
+    if is_plat("mingw") then
+        add_syslinks("wsock32", "ws2_32", "crypt32","secur32")
+    end
+
     ---------------------------------------------------------------------------
     -- generate config files. see also:
     --    * https://github.com/xmake-io/xmake/issues/320
