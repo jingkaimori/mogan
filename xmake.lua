@@ -46,7 +46,7 @@ target("mogan")
     
     set_languages("c++17")
     set_policy("check.auto_ignore_flags", false)
-    add_rules("qt.shared")
+    add_rules("qt.widgetapp_static")
     add_frameworks("QtGui","QtWidgets","QtCore","QtPrintSupport","QtSvg")
     set_configvar("QTTEXMACS", 1)
 
@@ -236,6 +236,7 @@ target("mogan")
     end
     add_files("src/Plugins/Qt/**.cpp")
     add_files("src/Plugins/Qt/**.hpp")
+    add_files("src/Texmacs/Texmacs/texmacs.cpp")
 
     add_mxflags("-fno-objc-arc")
     add_cxxflags("-include src/System/config.h")
